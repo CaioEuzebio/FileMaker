@@ -1,0 +1,15 @@
+If [ IsEmpty ( SupplyAdmin::PassAdmin ) ]
+Show Custom Dialog [ "Aviso" ; "Usuario ou senha invalidos." ]
+Clear [ Select ; SupplyAdmin::PassAdmin] 
+Clear [ Select ; SupplyAdminReg::AdminPassFK]
+Else If [SupplyAdmin::PassAdmin=SupplyAdminReg::AdminPassFK]
+Clear [ Select ; SupplyAdmin::PassAdmin ] 
+Clear [Select; SupplyAdminReg::AdminPassFK] 
+Go to Layout [ "products" (products) ]
+Else
+Show Custom Dialog [ "Aviso" ; "Senha de administrador incorreta." ] 
+Clear [Select; SupplyAdminReg::AdminPassFK]
+Clear [ Select ; SupplyAdmin::PassAdmin ]
+End If
+Clear [ Select ; SupplyAdmin::PassAdmin ]
+Clear [ Select ; SupplyAdminReg::AdminPassFK] Adjust Window [ Resize to Fit ]
