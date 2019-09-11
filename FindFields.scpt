@@ -1,0 +1,5 @@
+Enter Find Mode [ Pause: Off ]
+Set Field [ Sales::Data ; Sales::FindData ] Set Field [ Sales::ID ; Sales::FindID ]
+Set Error Capture [ On ]
+Perform Find [ ]
+Sort Records [ With dialog: Off ]
